@@ -577,7 +577,7 @@ select {
 	width: 20%;
 	background: none repeat scroll 0 0 #048197 ;
     border-width: 1px;
-    text-align: center;
+   # text-align: center;
 	color: #dbdada;
 	display: block;
 	float:left;
@@ -612,7 +612,7 @@ select {
 	background: none repeat scroll 0 0 #048197 ;
 	border-radius:5px 0 0;
     border-width: 1px;
-    text-align: center;
+   # text-align: center;
 	color: #dbdada;
 	display: block;
 	float:left;
@@ -624,7 +624,7 @@ select {
 	background: none repeat scroll 0 0 #048197 ;
 	border-radius:0 5px 0 0;
     border-width: 1px;
-    text-align: center;
+   # text-align: center;
 	color: #dbdada;
 	display: block;
 	float:left;
@@ -635,7 +635,7 @@ select {
 	width: 10%;
 	background: none repeat scroll 0 0 #048197 ;
     border-width: 1px;
-    text-align: center;
+   # text-align: center;
 	color: #dbdada;
 	display: block;
 	float:left;
@@ -647,7 +647,7 @@ select {
     border-radius:0 5px 0 0;
 	background: none repeat scroll 0 0 #048197 ;
     border-width: 1px;
-    text-align: center;
+   # text-align: center;
 	color: #dbdada;
 	display: block;
 	float:left;
@@ -684,7 +684,7 @@ select {
 	color: #505050;
 	display: block;
 	float:left;
-    padding: 0.5em 0 0.5em 1em;
+    padding: 0.5em 0 0 0;
 }
 .section li.section-body-35{
 	width: 35%;
@@ -692,7 +692,7 @@ select {
 	color: #505050;
 	display: block;
 	float:left;
-    padding: 0.5em 0 0.5em 1em;
+    padding: 0.5em 0 0 0;
 }
 .section li.section-body-40{
 	width: 40%;
@@ -700,7 +700,7 @@ select {
 	color: #045c97;
 	display: block;
 	float:left;
-    padding: 0.5em 0 0.5em 1em;
+    padding: 0.5em 0 0 0;
 }
 .section li.section-body-30{
 	width: 29%;
@@ -709,7 +709,7 @@ select {
 	font-weight: bold;
 	display: block;
 	float:left;
-    padding: 2px 0 0;
+    padding: 0.5em 0 0 0;
 }
 .section li.section-body-20{
 	width: 20%;
@@ -717,7 +717,7 @@ select {
 	color: #505050;
 	display: block;
 	float:left;
-    padding: 0.5em 0 0.5em 1em;
+    padding: 0.5em 0 0 0;
 }
 .section li.section-body-15{
 	width: 15%;
@@ -732,10 +732,10 @@ select {
 .section li.section-body-10{
 	width: 10%;
     border-width: 1px;
-	color: #dbdada;
+	color: #505050;
 	display: block;
 	float:left;
-	text-align: center;
+	padding: 0.5em 0 0 0;	
 }
 .section li.section-body-6{
 	width: 6.5%;

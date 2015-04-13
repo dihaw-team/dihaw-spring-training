@@ -43,19 +43,9 @@
 								<form:errors path="firstName" element="label" cssClass="error"/>
 							</li>
 							<li class="huge">
-								<form:label path="username"><strong><spring:message code="username" /></strong></form:label> 
-								<form:input path="username" name="username" />
-								<form:errors path="username" element="label" cssClass="error"/>
-							</li>
-							<li class="huge">
-								<form:label path="email"><strong><spring:message code="email" /></strong></form:label> 
-								<form:input path="email" name="email" />
-								<form:errors path="email" element="label" cssClass="error"/>
-							</li>
-							<li class="huge">
-								<form:label path="password"><strong><spring:message code="password" /></strong></form:label> 
-								<form:input path="password" name="password" />
-								<form:errors path="password" element="label" cssClass="error"/>
+								<form:label path="lastName"><strong><spring:message code="lastName" /></strong></form:label> 
+								<form:input path="lastName" name="lastName" />
+								<form:errors path="lastName" element="label" cssClass="error"/>
 							</li>
 							<li class="huge">
 								<form:label path="gender"><strong><spring:message code="gender" /></strong></form:label>
@@ -90,64 +80,7 @@
 									</select>
 								</spring:bind>
 								<form:errors path="city" element="label" cssClass="error"/>
-							</li>
-							
-							
-							
-							
-							
-							
-							<%--li class="huge">
-								<c:if test="${user.accountNonExpired eq 1}"><div id="user-connect" >
-									<a href="changeAccountExpired?id=${user.id}&value=${user.accountNonExpired}" >
-										<span><spring:message code="changeAccountExpired" /></span>
-									</a>
-								</div></c:if>
-								<c:if test="${user.accountNonExpired eq 0}"><div id="user-block" >
-									<a href="changeAccountExpired?id=${user.id}&value=${user.accountNonExpired}" >
-										<span><spring:message code="changeAccountExpired" /></span>
-									</a>
-								</div></c:if>
-								
-								<c:if test="${user.accountNonLocked eq 1}"><div id="user-connect" >
-									<a href="changeAccountLocked?id=${user.id}&value=${user.accountNonLocked}" >
-										<span><spring:message code="changeAccountLocked" /></span>
-									</a>
-								</div></c:if>
-								<c:if test="${user.accountNonLocked eq 0}"><div id="user-block" >
-									<a href="changeAccountLocked?id=${user.id}&value=${user.accountNonLocked}" >
-										<span><spring:message code="changeAccountLocked" /></span>
-									</a>
-								</div></c:if>
-								
-								<c:if test="${user.credentialsNonExpired eq 1}"><div id="user-connect" >
-									<a href="changeCredentialsExpired?id=${user.id}&value=${user.credentialsNonExpired}" >
-										<span><spring:message code="changeCredentialsExpired" /></span>
-									</a>
-								</div></c:if>	
-								<c:if test="${user.credentialsNonExpired eq 0}"><div id="user-block" >
-									<a href="changeCredentialsExpired?id=${user.id}&value=${user.credentialsNonExpired}" >
-										<span><spring:message code="changeCredentialsExpired" /></span>
-									</a>
-								</div></c:if>							
-							</li --%>
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
+							</li>				
 							
 						</ul>
 					</div>

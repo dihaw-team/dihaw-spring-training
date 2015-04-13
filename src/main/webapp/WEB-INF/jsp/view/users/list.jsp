@@ -33,8 +33,12 @@
 			<div class="section">
 				<ul>
 					<li class="section-head-20-left"><spring:message code="id" /></li>
-					<li class="section-head-30"><spring:message code="firstName" /></li>
-					<li class="section-head-30"><spring:message code="LastName" /></li>
+					<li class="section-head-20"><spring:message code="firstName" /></li>
+					<li class="section-head-20"><spring:message code="lastName" /></li>
+					
+					<li class="section-head-10"><spring:message code="gender" /></li>
+					<li class="section-head-10"><spring:message code="city" /></li>
+					
 					<li class="section-head-10"><spring:message code="edit" /></li>
 					<li class="section-head-10-right"><spring:message code="delete" /></li>
 				</ul>	
@@ -42,8 +46,11 @@
 					<ul class="section-body">
 					
 						<li class="section-body-20">${user.id}</li>
-						<li class="section-body-30">${user.firstName}</li>
-						<li class="section-body-30">${user.lastName}</li>
+						<li class="section-body-20">${user.firstName}</li>
+						<li class="section-body-20">${user.lastName}</li>
+						
+						<li class="section-body-10">${user.gender}</li>
+						<li class="section-body-10">${user.city.cityName}</li>
 						
 						<li class="section-body-10">
 							<a href="edit?id=${user.id}" >

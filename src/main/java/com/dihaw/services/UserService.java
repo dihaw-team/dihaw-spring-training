@@ -11,11 +11,11 @@ public interface UserService {
 	
 	public Page<User> users(Pageable pageable);
 	
-	public User getUserById(String id) throws UserNotFoundException;
+	public User getUserById(int id) throws UserNotFoundException;
 	
 	public void updateUser(User user) throws UserNotFoundException;
 	
-	public void deleteUser(String id) throws UserNotFoundException;
+	public void deleteUser(int id) throws UserNotFoundException;
 	
 	public ResponseDTO registerUser(User user);
 

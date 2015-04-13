@@ -43,19 +43,9 @@
 								<form:errors path="firstName" element="label" cssClass="error"/>
 							</li>
 							<li class="huge">
-								<form:label path="username"><strong><spring:message code="username" /></strong></form:label> 
-								<form:input path="username" name="username" />
-								<form:errors path="username" element="label" cssClass="error"/>
-							</li>
-							<li class="huge">
-								<form:label path="email"><strong><spring:message code="email" /></strong></form:label> 
-								<form:input path="email" name="email" />
-								<form:errors path="email" element="label" cssClass="error"/>
-							</li>
-							<li class="huge">
-								<form:label path="password"><strong><spring:message code="password" /></strong></form:label> 
-								<form:input path="password" name="password" />
-								<form:errors path="password" element="label" cssClass="error"/>
+								<form:label path="lastName"><strong><spring:message code="lastName" /></strong></form:label> 
+								<form:input path="lastName" name="lastName" />
+								<form:errors path="lastName" element="label" cssClass="error"/>
 							</li>
 							<li class="radio">
 								<form:label path="gender"><strong><spring:message code="gender" /></strong></form:label>
@@ -64,26 +54,6 @@
 									<form:errors path="gender" element="label" cssClass="error"/>
 								</div>
 							</li>
-							<li class="radio">
-								<form:label path="status"><strong><spring:message code="status" /></strong></form:label>
-								<div class="radio"> 
-									<form:radiobuttons path="status" items="${statusList}" />
-									<form:errors path="status" element="label" cssClass="error"/>
-								</div>
-							</li>
-							
-							<%--li class="huge">
-								<form:label path="userRole"><strong><spring:message code="userRole" /></strong></form:label> 
-								<spring:bind path="userRole">
-									<select name="userRole">
-										<c:forEach items="${roleList}" var="item">
-											<option value="${item}">${item}
-												spring:message code="user-role.${item}" />
-											</option>
-										</c:forEach>
-									</select>
-								</spring:bind>								
-							</li --%>
 							
 							<li class="huge">
 								<form:label path="city"><strong><spring:message code="city" /></strong></form:label> 

@@ -40,8 +40,6 @@ public class UserController {
 	public static final String RESULT_ATTRIBUTE = "result";
 	public static final String CITY_MODEL_ATTRIBUTE = "cityList";
 	public static final String GENDER_MODEL_ATTRIBUTE = "genderList";
-	public static final String USER_STATUS_MODEL_ATTRIBUTE = "statusList";
-	public static final String USER_ROLES_MODEL_ATTRIBUTE = "roleList";
 	
 	private static String ERROR_MESSAGE = "errorMessage";
 	private static String RESPONSE_STATUS = "status";
@@ -76,15 +74,6 @@ public class UserController {
 		return genderList;
 	}
 	
-	@ModelAttribute(USER_ROLES_MODEL_ATTRIBUTE)
-	public List<Integer> rolesModelAttribute(){
-		
-		List<Integer> roles = new ArrayList<Integer>();
-		roles.add(1);
-		roles.add(2);
-		
-		return roles;
-	}
 	
 	@ModelAttribute(CITY_MODEL_ATTRIBUTE)
 	public List<City> CityModelAttribute() {
@@ -109,9 +98,7 @@ public class UserController {
 	@RequestMapping(value="/add", method = RequestMethod.GET)
 	public String registerUser(Model model, ModelMap modelMap,
 			@ModelAttribute(GENDER_MODEL_ATTRIBUTE) List<String> genderList,
-			@ModelAttribute(USER_STATUS_MODEL_ATTRIBUTE) List<String> userSatusList,
 			@ModelAttribute(CITY_MODEL_ATTRIBUTE) List<String> cityList,
-			@ModelAttribute(USER_ROLES_MODEL_ATTRIBUTE) List<Integer> userRoles,
 			@ModelAttribute(USER_FORM_ATTRIBUTE) User user, BindingResult bindingResult) {
 		
 		logger.info("---------- Showing add user view");
@@ -127,8 +114,6 @@ public class UserController {
 
 		model.addAttribute(USER_FORM_ATTRIBUTE, new User());
 		model.addAttribute(GENDER_MODEL_ATTRIBUTE, genderList);
-		model.addAttribute(USER_STATUS_MODEL_ATTRIBUTE, userSatusList);
-		model.addAttribute(USER_ROLES_MODEL_ATTRIBUTE, userRoles);
 		model.addAttribute(CITY_MODEL_ATTRIBUTE, cityList);
 		
 		return ADD_VIEW;
@@ -138,7 +123,6 @@ public class UserController {
 	@RequestMapping(value = "/do-add", method = RequestMethod.POST)
 	public String addUser(Model model,
 			@ModelAttribute(GENDER_MODEL_ATTRIBUTE) List<String> genderList,
-			@ModelAttribute(USER_STATUS_MODEL_ATTRIBUTE) List<String> userSatusList,
 			@ModelAttribute(CITY_MODEL_ATTRIBUTE) List<String> cityList,
 			@ModelAttribute(USER_FORM_ATTRIBUTE) User user, 
 			BindingResult bindingResult ) {
@@ -149,7 +133,6 @@ public class UserController {
 			
 			model.addAttribute("addErrors", bindingResult);
 			
-			model.addAttribute(USER_STATUS_MODEL_ATTRIBUTE, userSatusList);
 			model.addAttribute(GENDER_MODEL_ATTRIBUTE, genderList);
 			model.addAttribute(CITY_MODEL_ATTRIBUTE, cityList);
 		}
@@ -171,34 +154,12 @@ public class UserController {
 		return ADD_VIEW;
 	}
 	
-	@RequestMapping(value="/editStatus", method = RequestMethod.GET)
-	public String editUserStatus(Model model, ModelMap modelMap, @RequestParam String id,
-			@ModelAttribute(USER_FORM_ATTRIBUTE) User user) throws UserNotFoundException{
-		
-		logger.info("---------- Showing edit user view");
-		
-		try{
-			user = userService.getUserById(id);
-		}catch(UserNotFoundException e){
-			
-			model.addAttribute(ERROR_MESSAGE, e.getMessage());
-			
-			return ERROR_VIEW;
-		}
-		
-		model.addAttribute(USER_FORM_ATTRIBUTE, user);
-		
-		return EDIT_STAUTS_VIEW;
-
-	}
 
 	@RequestMapping(value="/edit", method = RequestMethod.GET)
 	public String editUser(Model model, ModelMap modelMap,
 			@ModelAttribute(GENDER_MODEL_ATTRIBUTE) List<String> genderList,
-			@ModelAttribute(USER_STATUS_MODEL_ATTRIBUTE) List<String> userSatusList,
-			@ModelAttribute(USER_ROLES_MODEL_ATTRIBUTE) List<String> userRoles,
 			@ModelAttribute(CITY_MODEL_ATTRIBUTE) List<City> cityList,
-			@RequestParam String id,
+			@RequestParam(value = "id") int id,
 			@ModelAttribute(USER_FORM_ATTRIBUTE) User user,
 			BindingResult bindingResult) throws UserNotFoundException{
 		
@@ -220,9 +181,7 @@ public class UserController {
 		}
 		
 		model.addAttribute(USER_FORM_ATTRIBUTE, user);
-		model.addAttribute(USER_STATUS_MODEL_ATTRIBUTE, userSatusList);
 		model.addAttribute(GENDER_MODEL_ATTRIBUTE, genderList);
-		model.addAttribute(USER_ROLES_MODEL_ATTRIBUTE, userRoles);
 		model.addAttribute(CITY_MODEL_ATTRIBUTE, cityList);
 		
 		return EDIT_VIEW;
@@ -258,7 +217,7 @@ public class UserController {
 	}
 
 	@RequestMapping("/delete")
-	public String deleteUser(Model model, @RequestParam String id) {
+	public String deleteUser(Model model, @RequestParam(value = "id") int id) {
 		
 		logger.info("---------- RequestMapping: /delete");
 		

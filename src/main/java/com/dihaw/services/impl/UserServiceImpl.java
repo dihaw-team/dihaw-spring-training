@@ -1,11 +1,5 @@
 package com.dihaw.services.impl;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,9 +37,9 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Transactional(propagation = Propagation.REQUIRED)
-	public User getUserById(String id) throws UserNotFoundException{
+	public User getUserById(int id) throws UserNotFoundException{
 		
-		User user= userRepository.findOne(Integer.parseInt(id));
+		User user= userRepository.findOne(id);
 		
 		if(user == null)
 			throw new UserNotFoundException(String.format("No user found for id "+id));
@@ -91,9 +85,9 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Transactional(propagation = Propagation.REQUIRED)
-	public void deleteUser(String id){
+	public void deleteUser(int id){
 		
-		userRepository.delete(Integer.parseInt(id));
+		userRepository.delete(id);
 	}
 
 

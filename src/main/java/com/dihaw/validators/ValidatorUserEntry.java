@@ -22,7 +22,7 @@ public class ValidatorUserEntry implements Validator {
 		User target = (User) arg0;
 		
 		ValidationSupportUtils.rejectIfEmptyOrWhitespace(errors, "firstName", "validation.not.null");
-		ValidationSupportUtils.rejectIfEmptyOrWhitespace(errors, "username", "validation.not.null");
+		ValidationSupportUtils.rejectIfEmptyOrWhitespace(errors, "lastName", "validation.not.null");
 		ValidationSupportUtils.rejectIfEmptyOrWhitespace(errors, "gender", "validation.not.null");
 		ValidationSupportUtils.rejectIfEmptyOrWhitespace(errors, "city", "validation.not.null");
 		
