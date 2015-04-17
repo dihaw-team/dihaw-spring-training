@@ -10,7 +10,7 @@
 			</div>
 			<p>	
 				This project developed By <a href="http://blog.dihaw.com" target="_blank">Wahid Gazzah</a>. 
-				The source code is available in <a href="https://github.com/dihaw/dihaw-spring-training" target="_blank">Github</a>.
+				The source code is available in <a href="https://github.com/dihaw-team/dihaw-spring-training" target="_blank">Github</a>.
 			</p>
 			
 			<div class="about-title">
